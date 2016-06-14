@@ -1,0 +1,72 @@
+header {
+	text-align: center;
+}
+
+h1 {
+	color: rgb(2,132,130);
+	font-family: Arial, sans-serif;
+}
+
+h2 {
+	color: #ffd700;
+	font-family: "Courier New", monospace;
+}
+
+nav {
+	background-color: #808080;
+}
+
+nav a {
+	text-decoration: none;
+	color: white;
+	background-color: #ffbf00;
+	padding: 35px;
+	display: block;
+	float: left;
+}
+
+a:hover {
+	background-color: #ee5f3c;
+}
+
+p {
+	text-align: center;
+}
+
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	content: " ";
+	clear: both;
+	height: 0;
+	font-size: 0;
+}
+
+.board {
+	height: 50%;
+	width: 50%;
+	display: inline-block;
+	float: left;
+	margin: 8%;
+}
+
+.card {
+	height: 200px;
+	width: 150px;
+	border: 1px solid black;
+	border-radius: 10px;
+	background: #FFFF00;
+	float: left;
+	margin: 8%;
+}
+
+#name {
+	color: #ff0000;
+	font-weight: bold;
+}
+
+footer {
+	clear: both;
+	background-color: #808080;
+	text-align: center;
+}
