@@ -1,11 +1,10 @@
 // array of game card values
 var cards = ['queen', 'king', 'king', 'queen'];
-// cards that have been clicked, or "turned over"
+// cards that have been clicked, or "turned over" on current turn
 var cardsInPlay = [];
 
 // find & save the board so we can add cards 
 var gameBoard = document.getElementById('game-board');
-//var newCard;
 
 // function to create board and cards
 var createBoard = function() {
@@ -21,18 +20,15 @@ var createBoard = function() {
 		newCard.addEventListener('click', isTwoCards);
 		//add the card to the board
 		gameBoard.appendChild(newCard);
-		// gameBoard.appendChild(newCard);
-
 	}
 };
 
-// checks to see if 2 cards are turned over
+// fcn to check whether 2 cards are turned over
 var isTwoCards = function() {
 	// adds the value of the clicked card to the cardsInPlay array
 	cardsInPlay.push(this.getAttribute('data-card'));
 	
 	// "turn over" the card
-	console.log(this.getAttribute('data-card'));
 	if (this.getAttribute('data-card') === 'king') {
 		//king image
 		this.innerHTML = "<img src='images/Hearts-13.png' alt='King of Hearts'>";
@@ -43,10 +39,8 @@ var isTwoCards = function() {
 
 	// check if this is the 2nd card turned over
 	if (cardsInPlay.length === 2) {
-		//console.log(cardsInPlay);
 		// if it is, run the fuction isMatch on cardsInPlay
 		isMatch(cardsInPlay);
-		//console.log(cardsInPlay);
 		// reset cardsInPlay to empty for next turn
 		cardsInPlay = [];
 		// "turn back over" cards for next turn by clearing innerHTML on all card elements
@@ -60,7 +54,7 @@ var isTwoCards = function() {
 // fcn to check if the 2 turned over cards are the same
 var isMatch = function(cardsInPlay) {
 
-	// display a message telling the user whether they found a match
+	// check for a match, then display appropriate message
 	if (cardsInPlay[0] === cardsInPlay[1]) {
 		alert('You found a match!');
 	} else {
@@ -68,4 +62,5 @@ var isMatch = function(cardsInPlay) {
 	}
 }
 
+// execute createBoard
 createBoard();
